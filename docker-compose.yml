@@ -1,0 +1,13 @@
+services:
+  activemq:
+    # Use the same image as Testcontainer
+    image: rmohr/activemq:5.15.9
+    ports:
+      # Map port 61616 for ActiveMQ broker connection
+      - "61616:61616"
+      # Map port 8161 for ActiveMQ Web Console (optional access)
+      - "8161:8161"
+    environment:
+      # Set credentials matching application.yml and test setup
+      ACTIVEMQ_DEFAULT_USER: admin
+      ACTIVEMQ_DEFAULT_PASSWORD: admin
